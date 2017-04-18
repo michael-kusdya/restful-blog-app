@@ -1,0 +1,20 @@
+i.icon {
+    font-size: 1.5em;
+}
+
+.container.main {
+    margin-top: 6.0em;
+}
+
+#delete {
+    display: inline;
+}
+
+.column {
+    max-width: 450px;
+    margin-top: 100px;
+}
+
+.container{
+    margin-top: 50px;
+}

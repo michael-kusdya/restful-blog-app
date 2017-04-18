@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Blog App</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <!--
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+</head>
+
+<body>
+    <div class="ui fixed inverted menu">
+        <a class="active item" href="/blogs"><i class="feed icon"></i>
+    Blog Site
+      </a>
+        <a href="/blogs/new" class="item">
+    New Post
+      </a>
+        <div class="right menu">
+            <% if(!currentUser){ %>
+                <a class="item" href="/login">Login</a>
+                <a class="item" href="/register">Sign Up</a>
+            <% } else { %>
+                    <a class="item">Welcome, <%= currentUser.username %></a>
+                    <a class="item" href="/logout">Log Out</a>
+            <% } %>
+        </div>
+    </div>
+
+    <div class="ui container">
+        <% if(success && success.length > 0){ %>
+            <div class="ui success message">
+                <div class="header">
+                    <%= success %>
+                </div>
+            </div>
+        <% } %>
+        <% if(error && error.length > 0){ %>
+            <div class="ui negative message">
+                <div class="header">
+                    <%= error %>
+                </div>
+        <% } %>
+    </div>
