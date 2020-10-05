@@ -1,5 +1,5 @@
 var express = require("express"),
-    uri = "mongodb+srv://michael:17061995Jkt@blogapp.fppv0.mongodb.net/blogapp?retryWrites=true&w=majority",
+    uri = "mongodb://michael:17061995Jkt@blogapp-shard-00-00.fppv0.mongodb.net:27017,blogapp-shard-00-01.fppv0.mongodb.net:27017,blogapp-shard-00-02.fppv0.mongodb.net:27017/blogapp?ssl=true&replicaSet=atlas-j2r195-shard-0&authSource=admin&retryWrites=true&w=majority";,
     expressSanitizer = require("express-sanitizer"),
     app = express(),
     methodOverride = require("method-override"),
