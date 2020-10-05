@@ -1,4 +1,5 @@
 var express = require("express"),
+    uri = "mongodb+srv://michael:17061995Jkt@blogapp.fppv0.mongodb.net/blogapp?retryWrites=true&w=majority",
     expressSanitizer = require("express-sanitizer"),
     app = express(),
     methodOverride = require("method-override"),
@@ -12,7 +13,8 @@ var express = require("express"),
 
 //App config
 // mongoose.connect("mongodb://localhost/restful_blog_app_v2");
-mongoose.connect("mongodb://michael:17061995@ds159670.mlab.com:59670/blogapp");
+// mongoose.connect("mongodb://michael:17061995@ds159670.mlab.com:59670/blogapp");
+mongoose.connect(uri).catch((error) => { console.log(error); });;
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({
